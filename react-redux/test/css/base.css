@@ -1,0 +1,27 @@
+
+body {font-family:"苹方常规","Microsoft Yahei",Arial,'Hiragino Sans GB',sans-serif; font-size:.32rem; color:#232c31;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,sup,sub{margin:0;padding:0}
+fieldset,img{border:0}
+body{background-color: #fff;}
+em,i{font-style: normal;}
+ul,ol,li {list-style:none;}
+img{-ms-interpolation-mode: bicubic; vertical-align:top;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;outline:none; font-family:"Microsoft Yahei";font-size: .26rem;}
+.imgmiddle,input,select{vertical-align:top;}
+.clear{clear:both; height:0; overflow:hidden;}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+a {text-decoration:none; color:#333333;}
+a:hover{ text-decoration:none; color:#f60;}
+a:active{blr:expression(this.onFocus=this.blur());}
+li,div,section,ul,input,header,textarea{box-sizing:border-box;}
+
+.select{
+  width: .8rem;
+  height: .3rem;
+  line-height: .3rem;
+  text-align: center;
+  border:  1px solid #e5e5e5;
+}
