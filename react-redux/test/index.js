@@ -16,8 +16,7 @@ const store = createStore(reducers, devToolsEnhancer(
 
   // other store enhancers if any
 ));
-
-
+//我叼啊
 let rootElement = document.getElementById('root')
 
 render(
