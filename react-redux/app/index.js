@@ -6,7 +6,7 @@ import App from './containers/App'
 import todoApp from './reducers/reducers'
 
 let store = createStore(todoApp)
-
+//看看版本
 let rootElement = document.getElementById('root')
 render(
   <Provider store={store}>
