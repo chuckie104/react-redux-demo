@@ -14,7 +14,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 .fl{float:left; display:inline;}
 .fr{float:right; display:inline;}
 a {text-decoration:none; color:#333333;}
-a:hover{ text-decoration:none; color:#f60;}
+a:hover{ text-decoration:none; color:#333;}
 a:active{blr:expression(this.onFocus=this.blur());}
 li,div,section,ul,input,header,textarea{box-sizing:border-box;}
 

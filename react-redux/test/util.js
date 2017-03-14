@@ -20,6 +20,9 @@ const util={
   },
   rem(){
     return document.documentElement.clientWidth/7.5;
+  },
+  height(){
+    return document.documentElement.clientHeight
   }
 }
 

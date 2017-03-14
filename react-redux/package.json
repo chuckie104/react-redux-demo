@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+      "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +33,7 @@
     "babel-core": "^6.23.1",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.0",
+    "react-router": "^3.0.0",
     "redux-devtools": "^3.3.1",
     "sass-loader": "^6.0.3"
   }

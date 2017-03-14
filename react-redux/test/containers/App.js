@@ -6,7 +6,7 @@ import $ from "jquery";
 //引入方法与常量
 import actions from "../actions/FriendGroup/friendGroupAction";
 import FriendGroupList  from "../components/FriendGroupList"
-
+import HomeNav  from "../components/HomeNav"
 //
 const SelectLeft = actions.selectLeft;
 const SelectRight = actions.selectRight;
@@ -20,6 +20,7 @@ const getMoreFriendList =actions.getMoreFriendList;
 let pageY = 0;
 let disPageY =0;
 const MissHeight = util.rem()*1.6;
+const contentHeight =util.height()-util.rem()*2.6;
 
 
 class App extends Component {
@@ -30,7 +31,8 @@ class App extends Component {
         isMore:true,
         hasRefresh:true,
         pageNo:1,
-        pageNo2:1
+        pageNo2:1,
+
       }
     }
 
@@ -74,7 +76,6 @@ class App extends Component {
        .then((data)=>{
          if(data.errorType==0){
           if(_selectLeft){
-
               number = isLiked? initChaorenReducers[index].likerCount-1:initChaorenReducers[index].likerCount+1
               dispatch(choseLiked(index,!isLiked,number));
            }else{
@@ -185,7 +186,7 @@ class App extends Component {
     }
 
 
-  render(){
+    render(){
     const {_selectLeft,dispatch,initChaorenReducers,initFriendReducers,friendList} =this.props;
     return(
       <div>
@@ -193,7 +194,7 @@ class App extends Component {
             <div className="allHeader">
                 <p >超人圈</p>
                 <div className="rightHeader">
-                    <img src="" alt="" style={{width:'100%'}} />
+                    <img src={require('../images/ic_menu_public_forum.png')} alt="" style={{width:'100%'}} />
                 </div>
             </div>
             <div className="gerenNav clearfix">
@@ -211,7 +212,7 @@ class App extends Component {
                 </div>
             </div>
             <div className="aui-refresh-content"
-                style={{height:this.state.height,top:this.state.pageMoveY}}
+                style={{height:contentHeight,top:this.state.pageMoveY}}
                 onTouchStart={(event)=>this.touchstart(event)}
                 onTouchMove={(event)=>this.touchmove(event)}
                 onTouchEnd={(event)=>this.touchend(event)}
@@ -223,13 +224,14 @@ class App extends Component {
             </div>
 
         </div>
+        <HomeNav number="two"></HomeNav>
       </div>
     )
   }
 }
 
 function select(state){
-  return state
+  return state.friendGroupReducer
   // return{
   //   _selectLeft:state._selectLeft,
   //   initChaorenReducers:state.initChaorenReducers,

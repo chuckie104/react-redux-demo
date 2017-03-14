@@ -25,7 +25,7 @@ module.exports = {
         //加载器配置
         loaders: [
             { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.js$/, loader: 'jsx-loader!babel-loader' },
+            { test: /\.js$/, loader: 'babel-loader' },
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
             { test: /\.(png|jpg)$/, loader: 'file-loader?limit=8192'}
         ]
