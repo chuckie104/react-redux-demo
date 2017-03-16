@@ -544,7 +544,7 @@ $mainBlue :#1d8ae7;
 }
 .aui-refresh-content{
   position: absolute;
-  top: 1.6rem;
+  top: .8rem;
   left: 0px;
   width: 100%;
 }
@@ -582,9 +582,6 @@ $mainBlue :#1d8ae7;
   letter-spacing: .1rem;
   color: #666;
   background-color: #fff;
-  position: fixed;
-  top: .8rem;
-  left: 0px;
   z-index: 3;
   div{
     width: 50%;
@@ -947,10 +944,20 @@ padding: .2rem;}
   top: .2rem;
 }
 
+
+.allContent{
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: .8rem;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .myFileContent{
   width: 100%;
   background-color: #fff;
-
   li{
     width: 100%;
     border-bottom: 1px solid #e5e5e5;

@@ -9,6 +9,8 @@ function filesReducer(state=initialState,action){
       switch (action.type) {
         case actions.INITIAL_DATA:
           return Object.assign({},state,{filesList:action.data})
+          case actions.MORE_FILELIST:
+          return Object.assign({},state,{filesList:state.filesList.concat(action.data)})
         default:
         return state
       }

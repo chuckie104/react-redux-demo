@@ -19,8 +19,8 @@ const getMoreFriendList =actions.getMoreFriendList;
 //全局变量
 let pageY = 0;
 let disPageY =0;
-const MissHeight = util.rem()*1.6;
-const contentHeight =util.height()-util.rem()*2.6;
+const MissHeight = util.rem()*.8;
+const contentHeight =util.height()-util.rem()*1.8;
 
 
 class App extends Component {
@@ -88,9 +88,9 @@ class App extends Component {
 
     //手指触到屏幕
     touchstart(event){
+      console.log();
       let targetTouches = event.targetTouches[0];
       this.setState({pageY:targetTouches.pageY});
-
     }
     //手指滑动
     touchmove(event){
@@ -197,26 +197,27 @@ class App extends Component {
                     <img src={require('../images/ic_menu_public_forum.png')} alt="" style={{width:'100%'}} />
                 </div>
             </div>
-            <div className="gerenNav clearfix">
-                <div className={_selectLeft?'gerenNavActive':''}
-                      style={{float:"left"}}
-                      onClick={()=>dispatch(SelectLeft())}
-                  >
-                 广场
-                </div>
-                <div className={_selectLeft?'':'gerenNavActive'}
-                  style={{float:"left"}}
-                  onClick={()=>dispatch(SelectRight())}
-              >
-                  朋友圈
-                </div>
-            </div>
+
             <div className="aui-refresh-content"
                 style={{height:contentHeight,top:this.state.pageMoveY}}
                 onTouchStart={(event)=>this.touchstart(event)}
                 onTouchMove={(event)=>this.touchmove(event)}
                 onTouchEnd={(event)=>this.touchend(event)}
                   >
+                  <div className="gerenNav clearfix">
+                      <div className={_selectLeft?'gerenNavActive':''}
+                            style={{float:"left"}}
+                            onClick={()=>dispatch(SelectLeft())}
+                        >
+                       广场
+                      </div>
+                      <div className={_selectLeft?'':'gerenNavActive'}
+                        style={{float:"left"}}
+                        onClick={()=>dispatch(SelectRight())}
+                    >
+                        朋友圈
+                      </div>
+                  </div>
               <div className="aui-content">
               {_selectLeft?<FriendGroupList list={initChaorenReducers} dianzan={(index)=>this.dianzan(index)}></FriendGroupList>:
               <FriendGroupList list={initFriendReducers} dianzan={(index)=>this.dianzan(index)}></FriendGroupList>}
@@ -224,12 +225,12 @@ class App extends Component {
             </div>
 
         </div>
-        <HomeNav number="two"></HomeNav>
+
       </div>
     )
   }
 }
-
+// <HomeNav number="two"></HomeNav>
 function select(state){
   return state.friendGroupReducer
   // return{

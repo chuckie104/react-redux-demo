@@ -1,21 +1,33 @@
 import React,{Component} from "react";
-import {Link} from "react-router";
+import {Link,browserHistory} from "react-router";
 
 export default class HomeNav extends Component{
   constructor(props){
     super(props);
     this.state={
-
+      number:"two"
     }
   }
+
+  toFile(){
+    browserHistory.push("/file");
+    this.setState({number:"one"});
+  }
+  toFriendGroup(){
+    browserHistory.push("/");
+    this.setState({number:"two"});
+  }
   render(){
-    let {number} = this.props;
+    let {children} = this.props;
+    let {number}  =this.state;
     return(
       <div className="personalCenter">
+          {children}
           <div className="homeBottomNav">
                 <ul className="clearfix">
-                    <li id="duanxin" className={number=="one"?"navListBlue":""}>
-                      <Link href="/#/file">
+                    <li id="duanxin"
+                    className={number=="one"?"navListBlue":""}
+                    onClick={()=>this.toFile()}>
                         <div className="">
                           <div className={"navLogoFirst"+" "+(number=="one"?'navLogoFirstActive':"") }>
 
@@ -24,12 +36,11 @@ export default class HomeNav extends Component{
                             档案
                           </p>
                         </div>
-                      </Link>
-
-
                     </li>
-                    <li id="toWeiWang" className={number=="two"?'navListBlue':""}>
-                      <Link href="/">
+                    <li id="toWeiWang"
+                     className={number=="two"?'navListBlue':""}
+                     onClick={()=>this.toFriendGroup()}>
+
                         <div className="">
                           <div className={"navLogoSecond"+" "+(number=="two"?'navLogoSecondActive':"") }>
 
@@ -38,7 +49,7 @@ export default class HomeNav extends Component{
                           超人圈
                           </p>
                         </div>
-                      </Link>
+
                     </li>
                     <li id="toMore" className={number=="three"?'navListBlue':""}>
                       <div className="">

@@ -27,7 +27,7 @@ let rootElement = document.getElementById('root')
 render(
   <Provider store={store}>
       <div>
-          <Router history={hashHistory} routes={route(store)}/>
+          <Router history={browserHistory} routes={route(store)}/>
       </div>
   </Provider>,
   rootElement
